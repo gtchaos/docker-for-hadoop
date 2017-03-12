@@ -2,6 +2,8 @@
 
 You can build your hadoop clustor directly by one shell script. The script could produce a docker image contains a fully compiled hadoop environment and create one bridge network named hadoop in local host. 
 
+The docker image has added a user named hadoop(passwd: hadoop), so you can su the user to execute some jobs and tasks.
+
 When you first use it, make sure you have installed a docker engine in your computer.
 
 By default, the hadoop clustor contains 3 nodes: one master node and two slave nodes. You can specify the node number of hadoop clustor in `-n` option. 
@@ -20,6 +22,38 @@ If you are using Linux System, please reference the link [docker-for-linux](http
 
 ### usage
 
-1. git clone https://github.com/gtchaos/docker-for-hadoop.git
+1. clone repository 
+   
+   ```
+   $ git clone https://github.com/gtchaos/docker-for-hadoop.git
+   ```
 
-2. sh build.sh -n 3
+2. build hadoop clustor
+
+   You can specify the node number of hadoop clustor, example: -n 3.
+   
+   ```
+   $ sh build.sh -n 3
+   ```
+
+3. switch to hadoop user 
+
+   when you attach master node, please run `su hadoop` in bash.
+   
+   ```
+   root@hadoop-master:~# su hadoop
+   ```
+
+4. start hadoop
+   
+   ```
+   root@hadoop-master:~# ./start-hadoop.sh
+   ```
+
+5. run wordcount
+
+   ```
+   root@hadoop-master:~# ./run-wordcount.sh 
+   ```
+
+
