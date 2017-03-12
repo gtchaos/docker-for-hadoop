@@ -38,7 +38,7 @@ If you are using Linux System, please reference the link [docker-for-linux](http
 
 3. switch to hadoop user 
 
-   when you attach master node, please run `su hadoop` in bash.
+   When you attached master node, please run `su hadoop` in bash.
    
    ```
    root@hadoop-master:~# su hadoop
@@ -47,13 +47,13 @@ If you are using Linux System, please reference the link [docker-for-linux](http
 4. start hadoop
    
    ```
-   root@hadoop-master:~# ./start-hadoop.sh
+   hadoop@hadoop-master:~# ./start-hadoop.sh
    ```
 
 5. run wordcount
 
    ```
-   root@hadoop-master:~# ./run-wordcount.sh 
+   hadoop@hadoop-master:~# ./run-wordcount.sh 
    ```
 
 
