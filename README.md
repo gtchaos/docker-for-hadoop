@@ -1,8 +1,10 @@
 # docker-for-hadoop
 
-You can build your hadoop clustor directly by one shell script that contains a fully compiled hadoop environment.
+You can build your hadoop clustor directly by one shell script. The script could produce a docker image contains a fully compiled hadoop environment and create one bridge network named hadoop in local host. 
 
 When you first use it, make sure you have installed a docker engine in your computer.
+
+By default, the hadoop clustor contains 3 nodes: one master node and two slave nodes. You can specify the node number of hadoop clustor in `-n` option. 
 
 ### install docker engine
 
@@ -12,7 +14,7 @@ If you are using Linux System, please reference the link [docker-for-linux](http
 ### docker-image introduction
 
 * the docker-image based on Ubuntu 14.04
-* installed hadoop(version 2.7.3) in path `/usr/local/hadoop`
+* installed hadoop(version 2.7.2) in path `/usr/local/hadoop`
 * installed git, ssh-agent, oh-my-zsh and so on.
 
 
@@ -20,4 +22,4 @@ If you are using Linux System, please reference the link [docker-for-linux](http
 
 1. git clone https://github.com/gtchaos/docker-for-hadoop.git
 
-2. sh build-hadoop-clustor.sh
+2. sh build.sh -n 3
